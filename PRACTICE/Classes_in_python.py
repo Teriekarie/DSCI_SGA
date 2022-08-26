@@ -1,15 +1,21 @@
 # create a class 
 class Family:
-    pass
-Father = Family()
-mother = Family()
+    def __init__(self, name, age, occupation):
+        self.name = name
+        self.age = age
+        self.occupation = occupation
 
-Father.name = 'Jacob'
-Father.age = 49
-Father.occupation = 'Doctor'
+Father = Family('Jacob', 49, 'Doctor')
+mother = Family('Maria', 35, 'Lawyer')
 
-mother.name = 'Maria'
-mother.age = 35
-mother.occupation = 'Lawyer'
+print(Father.occupation)
+
+# Father.name = 'Jacob'
+# Father.age = 49
+# Father.occupation = 'Doctor'
+
+# mother.name = 'Maria'
+# mother.age = 35
+# mother.occupation = 'Lawyer'
 
 print(mother.age)
