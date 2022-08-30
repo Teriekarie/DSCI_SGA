@@ -11,7 +11,7 @@ class Students():
 # creating other class that derives from the Student class 
 class Group_leader(Students):
     def __init__(self):
-        super().__init__()
+        super().__init__("Group_leader")
         self.student = []
 
 
