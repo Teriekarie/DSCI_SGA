@@ -1,17 +1,16 @@
 # creating a parent class
 class Students():
-    def __init__(self, f_name, l_name, email):
-        self.f_name = f_name
-        self.l_name = l_name
+    def __init__(self, name, email):
+        self.name = name
         self.email = email
 
     def full_name(self):
-        return '{} {} {}'.format(self.f_name, self.l_name, self.email)
+        return '{} {} {}'.format(self.name, self.email)
     
 # creating other class that derives from the Student class 
 class Group_leader(Students):
-    def __init__(self):
-        super().__init__("Group_leader")
+    def __init__(self, name, email):
+        super().__init__(name, email)
         self.student = []
 
 
@@ -23,19 +22,10 @@ class Group_leader(Students):
 # Define a method that removes a student
     def remove_student(self, old_student):
         for i in self.student:
-            if i == student:
-               self.student.remove(old_student = i)
+            if i == old_student:
+               self.student.remove(old_student)
     
     
-    def email(self):
-        for i in self.student:
-            print(f'{i}@stutern.com')
-        
-# Define a method that prints out the full names
-    def student_bio(self):
-        for student in self.student:
-            print(student.full_name())
-
 # create 3 more instances of the parent class
 class_rep = Students()
 course_rep = Students()
@@ -57,10 +47,13 @@ male_lead.add_student("Mark Lee")
 female_lead.remove_student("Mark Lee")
 male_lead.remove_student("Darling Law")
 
-# print the full name of the student in the subcladd
-female_lead.student_bio()
-male_lead.student_bio()
+# print the full name of the student in the subclass
+female_lead = Group_leader("Ally Shepard", "allyyShep@gmail.com")
+male_lead = Group_leader("Mark Lee", "leemark@gmail.com")
+
+print(female_lead.name)
+print(male_lead.name)
 
 #print the email of the instance of the subclass
-female_lead.email()
-male_lead.email()
+print(female_lead.email)
+print(male_lead.email)
