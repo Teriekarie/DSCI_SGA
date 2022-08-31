@@ -5,7 +5,7 @@ print(f"{val} being used in this program.")
 
 # how to call a method using f-string 
 author = "jane smith"
-a_name = author.title()
+a_name = author.title() # this capitalizes the author's name
 print(f"This is a book by {a_name}.")
 
 
