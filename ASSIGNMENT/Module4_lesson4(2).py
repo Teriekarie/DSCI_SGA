@@ -134,15 +134,15 @@ least_num_albums()
 # program to determine the most common genre of songs
 def popular_genre():
     query= """
-        SELECT Name, Num_albums Genre
-        FROM celebrity
-        WHERE Num_albums > 5
-                   ORDER BY Genre)
+         SELECT genre, count(genre) as value_occurence from celebrity group by genre order by value_occurence desc limit 1
         """
     print(f"The most played genre of songs")
     c.execute(query)
     rows = c.fetchall()
-    print(rows)  
+    print(rows) 
+    
+popular_genre()
+    
     # print("Genre \n"f"{'.' * 10}")
         
     # for rows in rows:
